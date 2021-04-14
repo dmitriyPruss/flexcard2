@@ -6,12 +6,10 @@
 }
 
 body{
-    height: 100vh;
     background-color: rgb(182, 206, 206);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap;
     align-content: space-around;
 }
 :root{
@@ -20,8 +18,8 @@ body{
 }
 
 .cardBox{
-    margin: 10px 0;
-    width: var(--card-width);
+    margin: 10px;
+    flex: 0 2 var(--card-width);
     height: calc(var(--card-width)*2);
     background-color: rgb(179, 179, 61);
     overflow: hidden;
@@ -31,13 +29,13 @@ body{
     flex-direction: column; 
     align-items:center;
     justify-content: flex-start;
+    min-width: calc(var(--card-width)*0.7);
 }
 
 .top{
-    width:inherit;
+    width: 100%;
     height:calc(var(--card-width) * 0.8);
     background-color: rgb(83, 83, 253);
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,23 +51,27 @@ body{
     width: calc(var(--card-width) * 0.4);
     height: calc(var(--card-width) * 0.4);
     border-radius: 50%;
-    border: 1px solid rgb(83, 58, 58);
     overflow: hidden;
-    
+    position: relative;
 }
 .photo>img{
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    width: 88%;
+    height: 88%;
+    border-radius: 50%;
     overflow: hidden;
+    position: absolute;
+    top: 6%;
+    left: 6%;
 }
 #star{
     width: 25px;
     height: 25px;
     position: absolute;
-    top: calc(var(--card-width) * 0.42);
-    left: calc(var(--card-width) * 0.45);
-    z-index: 2;
+    border: 0px;
+    top: 97px;
+    left:47.5px;
+    z-index: 5;
 }
 
 .top>*:last-child{
@@ -82,30 +84,31 @@ body{
 .top+h2{
     padding:10px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 0.1rem;
 }
 .address{
     width: 85%;
     display:flex;
-    justify-content:space-around;
+    justify-content:center;
     align-items: center;
     border-bottom: 1px solid rgb(248, 214, 214);
     padding:10px;
   }
 .address>img{
     width: 20px;
+    margin-right: 10px;
 }
 .address>p{
     color: rgb(22, 51, 105);
     font-size:1.2rem;
-    letter-spacing: 0.3em;
     font-weight: 600;
     word-spacing: 0.2rem;
 }
 
 .cardBox>p:first-of-type{
+      height: 100px;
       margin: 20px 10px;
       text-align: center;
+      overflow-y: auto;
 }
 
 .emptyButton{
@@ -133,7 +136,9 @@ body{
 
 .stephenMain{
     background-color: rgb(185, 67, 67);
+    flex: 1 1 var(--card-width);
 }
+
 .stephenTop{
     background-color: rgb(189, 166, 166);
 }
@@ -143,9 +148,9 @@ ul{
 }
 ul>li{
     color: green;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 li>p{
     color: rgb(23, 31, 73);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
